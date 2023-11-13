@@ -1,0 +1,35 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.layout-header,
+.layout-footer {
+  padding: 10px;
+  text-align: center;
+}
+
+.layout-content {
+  flex: 1;
+  padding: 20px;
+}
+
+
+/* Media query for screens narrower than 768px */
+@media (max-width: 768px) {
+  .code-viewer {
+    flex-direction: column; /* Stack elements vertically */
+  }
+
+  .initial-comment, .layout-header, .layout-content, .layout-footer {
+    margin: 10px 0; /* Adjust margins for a stacked layout */
+  }
+}
+
+.code-viewer {
+  display: flex;
+  gap: 10px;
+  align-content: first baseline;
+
+  }
