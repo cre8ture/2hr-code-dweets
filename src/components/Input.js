@@ -81,7 +81,7 @@ const InputAndRespond = ({ parentId, type }) => {
   
     return (
         <div>
-          <label className='label-for-code-editor' style={{marginBottom: '10px'}}>Input your sweet code dweet:</label>
+          <label className='label-for-code-editor' style={{marginBottom: '10px'}}>Input your code dweet:</label>
 
   <div style={{ display: 'flex', marginTop: '10px', alignItems: "center", gap: '10px', height: type === 'reply' ? '80px' : '150px' }}>
     <div className='code-viewer' style={{ border: '1px solid rgba(30, 144, 255, 0.6)', borderRadius: '0px', padding: '5px', display: 'flex', alignItems: 'center' }}>
