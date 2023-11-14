@@ -58,66 +58,7 @@ const initialState = {
 
 
         },
-
-        'unique-child-comment-id': {
-            author: "Ki",
-            id: 'unique-child-comment-id',
-            parentId: 'initial-html-comment',
-            text: `<!DOCTYPE html>
-            <html lang="en">
-            <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Spinning and Floating Rainbow Square</title>
-                <style>
-                    #square {
-                        width: 100px;
-                        height: 100px;
-                        background-image: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
-                        position: absolute;
-                        border-radius: 10px;
-                        animation: spin 2s linear infinite;
-                    }
-            
-                    @keyframes spin {
-                        from { transform: rotate(0deg); }
-                        to { transform: rotate(360deg); }
-                    }
-                </style>
-            </head>
-            <body>
-            <h1>Wow, Blue Ball flying! Check this out</h1>
-            <div id="square"></div>
-            
-            <script>
-                const square = document.getElementById('square');
-                let x = 0, y = 0;
-                let dx = 2, dy = 2;
-            
-                function moveSquare() {
-                    const maxX = window.innerWidth - square.clientWidth;
-                    const maxY = window.innerHeight - square.clientHeight;
-            
-                    x += dx;
-                    y += dy;
-            
-                    if (x >= maxX || x <= 0) dx = -dx;
-                    if (y >= maxY || y <= 0) dy = -dy;
-            
-                    square.style.left = x + 'px';
-                    square.style.top = y + 'px';
-            
-                    requestAnimationFrame(moveSquare);
-                }
-            
-                requestAnimationFrame(moveSquare);
-            </script>
-            
-            </body>
-            </html>
-            `,
-            children: [] // In case this child comment will also have its children
-        }
+       
     },
     selectedCommentId: null // New state for tracking the selected comment
 };

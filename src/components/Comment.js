@@ -5,11 +5,18 @@ import React, { useState, forwardRef } from 'react';
 const Comment = forwardRef(({ comment, nestedComments, level }, ref) => {
   const [showChildren, setShowChildren] = useState(false);
 
+  console.log("nestedComments", nestedComments)
   // Check if nestedComments is an array; if not, use an empty array
-  const validNestedComments = Array.isArray(nestedComments) ? nestedComments : [];
+  // Convert the nestedComments object into an array of its values
+const validNestedComments = Array.isArray(nestedComments) ? nestedComments : Object.values(nestedComments);
 
-  const childComments = validNestedComments.filter(c => c.parentId === comment.id);
+  console.log("comment", comment, comment.id)
+  const childComments = validNestedComments.filter(c => {
+    console.log("c.parentId", c.parentId, "comment.id", comment.id)
+    
+    return c.parentId === comment.id});
 
+  console.log("validNestedComments", validNestedComments, "i am childComments", childComments)
   const commentStyle = {
     marginLeft: level > 0 ? '20px' : '0',
     position: 'relative',
@@ -28,6 +35,7 @@ const Comment = forwardRef(({ comment, nestedComments, level }, ref) => {
   } : {};
 
   const renderComments = (parentId, level) => {
+    
     return childComments.map(c => (
       <Comment key={c.id} comment={c} nestedComments={nestedComments} level={level + 1} />
     ));

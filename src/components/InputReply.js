@@ -62,6 +62,7 @@ const InputAndRespond = ({ parentId, type }) => {
     const maxCharLimit = 150;
     const dispatch = useDispatch();
   
+    console.log("parentId", parentId, type);
     const handleAddComment = () => {
       dispatch(addComment({ id: Date.now(), text: commentText, parentId, author: 'AuthorName' }));
       setCommentText('');
